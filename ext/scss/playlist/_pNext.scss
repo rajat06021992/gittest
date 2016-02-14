@@ -1,0 +1,45 @@
+// __pPlay_drawer_html_css
+.playlist-mode #invisible_layer{
+   border-top-left-radius: $radius_medium;
+   border-bottom-left-radius: $radius_medium;
+}
+// __pPlay_drawer_handle_html_css
+#next_list .hook{
+   float: left;
+   padding: 0px 10px;
+   cursor: pointer;
+}
+// __pPlay_drawer_sequence_html_css
+#next_list .items,#next_list .items_collapsed{
+   overflow-x: scroll;
+   overflow-y: hidden;
+   white-space: nowrap;
+   background-color: $color_logo;
+}
+#next_list .mpopup{
+   display: none;
+}
+#next_list .mthumb.current .mborder{
+   border: $next_border_width solid $color_white;
+}
+#next_list .items::-webkit-scrollbar {
+   display: none;
+}
+#next_list .item{
+   float: none;
+}
+.collapsed #next_list .items{
+   overflow-x: hidden;
+}
+.collapsed #next_list .items{
+   display: none;
+}
+.collapsed #next_list .items_collapsed{
+   display: block;
+}
+.opened #next_list .items_collapsed{
+   display: none;
+}
+#next_list .mthumb:hover .mtag{
+   padding-top: 0px;
+}

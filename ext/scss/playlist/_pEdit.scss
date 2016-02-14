@@ -1,0 +1,80 @@
+#playlist_new{
+
+}
+// __playlist_new_button_html_css // @Refazul, is this used?
+#playlist_new .mthumbnail{
+   background-color : $color_green;
+   border-radius    : $radius_small;
+   border           : 0px;
+   text-align       : center;
+}
+// __playlist_new_button_hover_html_css
+#playlist_new:hover .mthumbnail{
+   background-color: $color_green_light;
+}
+// __pEdit_body_html_css
+#playlist_create{
+   position        : fixed;
+   top             : 0px;
+   left            : 100%;
+   width           : 100%;
+   height          : 100%;
+   z-index         : 1000;
+   background-color: $playlist_create_background;
+   overflow-y      : scroll;
+}
+// __pEdit_result_html_css
+#pEdit_result .mthumb .mpopup{
+   display        : none;
+}
+// __pEdit_result_hover_html_css
+#pEdit_result .mthumb:hover .mborder{
+   border         : 1px solid #000;
+}
+.listed:hover .mborder{
+   border         : 3px solid $color_white;
+}
+// __pEdit_sequence_slot_html_css
+.carousel .slot .mthumbnail{
+   border         : 2px dashed $color_teal_light;
+   text-align     : center;
+   padding        : 1em;
+   color          : $color_black;
+   padding-top    : calc(32% - 2.5em);
+   line-height    : 1em;
+}
+#pEdit_sequence .mpopup{
+   display: none;
+}
+
+// __pEdit_header_html_css
+#pEdit_header{
+   background-color: $color_logo_dark;
+}
+// __pEdit_back_html_css
+#pEdit_header .back{
+   color: $playlist_create_background;
+   transition: all 300ms;
+}
+// __pEdit_back_hover_html_css
+#pEdit_header .back:hover{
+   color: $color_white;
+}
+// _pEdit_create_button_html_css
+#pEdit_header [type="button"]{
+   color: $color_teal_darkest;
+}
+.adjustment .fa-forward:active,.adjustment .fa-backward:active{
+   color: $color_white;
+}
+
+
+// __pEdit_settings_html_css
+#pEdit_settings{
+   background-color : $color_logo_dark; // $playlist_create_background;
+   //border-bottom    : $border_width solid $color_teal_light; // $playlist_create_foreground;
+}
+#pEdit_settings input[type="text"]{
+   background-color : $color_white; // $playlist_create_foreground;
+   border-color     : $color_teal_light; // $playlist_create_foreground;
+}

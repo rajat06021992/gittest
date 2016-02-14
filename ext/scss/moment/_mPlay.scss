@@ -1,0 +1,24 @@
+.mPlay_header_title{
+   text-shadow			 : $text_shadow_offset $text_shadow_offset $text_shadow_blur $color_black;
+}
+// __site_page_html_css
+.p-container{
+	position: fixed;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: $color_black;
+	z-index: 1000;
+}
+.p-container object,.host iframe{
+	margin-left: 5%;
+}
+.no-touch #invisible_layer,.p-container .header.wrapper,.p-container .instruction.wrapper,#transparent_layer{
+   opacity: 0;
+}
+.no-touch #invisible_layer.visible,.p-container .header.wrapper.visible,.p-container .instruction.wrapper.visible,#transparent_layer.visible{
+   opacity: 1;
+}
+.no-touch #invisible_layer.hover,.p-container .header.wrapper.hover,.p-container .instruction.wrapper.hover,#transparent_layer.hover{
+   opacity: 1;
+}

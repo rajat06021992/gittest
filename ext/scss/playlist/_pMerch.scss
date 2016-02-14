@@ -1,0 +1,155 @@
+///////////////////////////////
+// standard mode
+
+// __pMerch_html_css
+.playlist {
+	display        : inline-block;
+	position       : relative;
+	cursor         : pointer;
+	margin-bottom  : 16px;
+}
+// __pMerch_border_html_css
+.playlist_border {
+	border			: $border_width solid $color_transparent;
+}
+// __pMerch_border_hover_html_css
+.playlist:hover .playlist_border,#next_list .items .moment:hover .moment_border {
+	border			: $border_width solid $color_logo;
+	z-index			: 4;
+}
+.playlist:hover .pMerch_title{
+	padding-top		: 0px;
+}
+// __pMerch_moment_count_html_css
+.moment_count {
+	position       : absolute;
+	right          : #{$thumb_gap_right + $border_width};
+	top            : $border_width;
+	z-index        : 4;
+	padding        : $moment_count_horizontal_padding $moment_count_vertical_padding;
+	background     : $color_black_50_transparent;
+	text-shadow    : 0px 0px 4px #000;
+   border-radius  : $radius_medium  0px $radius_medium  $radius_medium;
+	color          : $color_teal_light;
+}
+// __pMerch_shadow_html_css
+.playlist_shadow {
+	position       : absolute;
+	width          : calc(100% - #{$thumb_gap_right});
+	height         : 100%;
+	top            : $playlist_shadow_horizontal_offset;
+	left           : $playlist_shadow_horizontal_offset;
+	background     : $color_teal_darkest;
+}
+// __pMerch_view_count_html_css
+.playlist .view_count {
+	position       : absolute;
+	text-align     : left;
+   padding        : 0px $playlist_title_padding_left $playlist_view_count_bottom $playlist_title_padding_left;
+	color          : $color_teal_dark;
+}
+.twitch .mthumb .view_count{
+	font-size		: 12px;
+	color				: #8c8c8c;
+}
+// __pMerch_visibility_status_html_css
+.playlist .status {
+	position       : absolute;
+	text-align     : left;
+	padding        : 0px $playlist_title_padding_left $playlist_view_count_bottom $playlist_title_padding_left;
+	bottom         : -44px;
+	color          : $color_red;
+}
+// __pMerch_visibility_status_html_css
+.playlist.private .view_count {
+	display        : none;
+}
+
+// __pMerch_title_html_css
+.pMerch_title {
+	max-height				: calc(100% - #{2*$border_width});
+	//padding        		: $playlist_title_padding_left;
+	text-align     		: left;
+	text-shadow    		: $text_shadow_offset $text_shadow_offset $text_shadow_blur $color_black;
+	line-height    		: $media_text_lineheight;
+	text-overflow			: ellipsis;
+	//white-space			: nowrap;
+	max-width				: 100%;
+	overflow					: hidden;
+	-webkit-line-clamp	: 2;//Number of lines to show
+   -webkit-box-orient	: vertical;
+	font-weight				: normal;
+   display					: -webkit-box;
+	font-size				: $text_font_size_small_small;
+}
+@media (min-width: $breakpoint_mobile) {
+	.pMerch_title {
+      font-size: $text_font_size_small_mobile;
+   }
+}
+@media (min-width: $breakpoint_tablet) {
+	.pMerch_title {
+      font-size: $text_font_size_small_tablet;
+   }
+}
+@media (min-width: $breakpoint_full) {
+   .pMerch_title {
+      font-size: $text_font_size_small_full;
+   }
+}
+
+// __playlist_menu_bottom
+.playlist_popup{
+
+}
+.playlist_popup .icon-bar{
+	margin-left: calc(50% - 11px);
+}
+.playlist_popup .icon-bar:first-child{
+	margin-top: calc(50% - 4px);
+}
+.no-touch .playlist_popup{
+	z-index: 0;
+}
+.touch .playlist_popup{
+	z-index: 2;
+}
+.touch .playlist_popup:hover,.no-touch .playlist_popup:hover{
+	z-index: 5;
+}
+.playlist_popup.top.right.menu{
+	overflow: hidden;
+	border: 0px solid $color_teal;
+}
+
+.touch .playlist_popup.menu{
+	display: block;
+}
+.playlist_popup:before{
+	font-size   : 25px;
+	position    : absolute;
+	top         : 6px;
+	left        : 10px;
+	color       : #ccc;
+	height      : 100%;
+	line-height : 1;
+}
+.playlist_popup_items{
+	display       : none;
+	position      : absolute;
+	margin        : 0px;
+	padding       : 0px;
+	right         : 0px;
+	bottom        : 0px;
+	width         : 150px;
+	list-style    : none;
+	background    : #d8d8d8;
+	border-radius : $radius_small;
+}
+.playlist_popup_items li{
+	padding: 5px;
+	transition: background 300ms;
+}
+.playlist_popup_items li:hover{
+	background: #ccc;
+}

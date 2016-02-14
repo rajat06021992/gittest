@@ -1,0 +1,95 @@
+// __mList_html_css
+
+// __mList_parnter_html_css
+#invisible_layer{
+	position: absolute;
+	opacity: 1;
+	z-index: 10;
+	background-color: $color_logo;
+	transition-property: opacity;
+	transition-duration: 300ms;
+}
+.twitch.live #invisible_layer.opened #moment_list .items{
+	pointer-events: fill;
+}
+.twitch.live #invisible_layer.collapsed #moment_list .items{
+	pointer-events: none;
+}
+.moment-mode #invisible_layer,.partner #invisible_layer{
+	border-top-right-radius: $radius_medium;
+	border-bottom-right-radius: $radius_medium;
+}
+.twitch.live.partner #invisible_layer{
+	border-top-left-radius: $radius_medium;
+	border-bottom-left-radius: $radius_medium;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+#moment_list{
+	padding-top: 10px;
+	box-sizing: border-box;
+}
+#moment_list .items{
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+.touch #moment_list .item{
+	float: none;
+	margin: 0px;
+}
+.twitch.live.partner #moment_list .item{
+	float: none;
+}
+// __mList_handle_html_css
+#moment_list .hook{
+	margin-top: -10px;
+	float: right;
+	padding: 0px 10px;
+	background-color: transparent;
+	cursor: pointer;
+}
+.twitch.live.partner #moment_list .hook{
+	float: left;
+}
+.twitch.live.partner #moment_playhead{
+	right: 0px;
+}
+.no-touch #moment_list .moment,.no-touch #moment_playhead{
+	width: 128px;
+	margin: 0px;
+	top: 10px;
+}
+.twitch.live.partner #moment_list .items .moment{
+	top:0px;
+}
+.twitch.live.partner .items{
+	border-right: 1px solid $color_teal_darkest;
+}
+.twitch.live.partner #moment_playhead.item{
+	float: right;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+.twitch.live.partner .items::-webkit-scrollbar {
+	display: none;
+}
+.twitch.live.partner #moment_list .item{
+	margin-left: 40px;
+}
+
+.no-touch #invisible_layer .mthumb .mthumbnail{
+	width: calc(100% - #{$border_width+$border_width});
+}
+.no-touch #invisible_layer #moment_playhead .mthumbnail{
+	width: 100%;
+}
+.no-touch #invisible_layer .mthumb .moment_tag{
+	width: calc(100% - #{$border_width+$border_width});
+}
+.no-touch #invisible_layer .mthumb .moment_border{
+	width: 100%;
+}
+.no-touch #invisible_layer .mthumb .moment_barrier{
+	width: 100%;
+}

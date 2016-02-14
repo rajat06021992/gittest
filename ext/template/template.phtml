@@ -1,0 +1,588 @@
+<!-- __mMerch_html -->
+<script type='text/template' id='moment_template'>
+	<a class="mthumb moment mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1 no-padding" data-moment="{{id}}" data-asset_id="{{asset_id}}" data-asset_source="{{asset_source}}" data-asset_resource_id="{{asset_resource_id}}" data-time_start="{{time_start}}" data-timestamp="{{timestamp}}"
+	data-image="{{thumbnail_background_image}}" data-rows="{{thumbnail_background_image_rows}}" data-columns="{{thumbnail_background_image_columns}}" data-position="{{thumbnail_background_image_position}}" data-tag="{{tag}}" data-count_played="{{count_played}}" data-count_played_dup="{{count_played_dup}}"
+	data-publisher="{{user_id}}">
+		<!-- __mMerch_thumb_html -->
+		<div class="mthumbnail moment_thumbnail">
+			<img width='100%' height='100%' />
+		</div>
+		<!-- __mMerch_play_icon_html -->
+		<div class="mplay vmiddle"><span class='fa fa-play-circle-o'></div>
+		<!-- __mMerch_border_html -->
+		<div class="mborder border-box-sizing moment_border"></div>
+		<!-- __mMerch_tag_html -->
+		<div class="mtag pMerch_title moment_tag">{{tag}}</div>
+		<!-- __mMerch_viewcount_html -->
+		<div class="moment_count"></div>
+		<!-- __mMerch_menu_open_html -->
+		<div class="mpopup moment_popup bottom right menu">
+			<i class='fa fa-bars'></i>
+		</div>
+		<!-- __mMerch_save_html -->
+		<div class="mpopup moment_popup top right done"></div>
+		<!-- __mMerch_publisher_html -->
+		<div class="mpopup moment_popup top right menu">
+			<img src='' alt='' width="100%" height="100%" onError="$($(this).closest('.mthumb')).parent().find('.mthumb-part').remove();$(this).closest('.mthumb').remove();" />
+		</div>
+		<!-- __mMerch_cancel_html -->
+		<div class="mpopup moment_popup bottom right cancel"></div>
+		<!-- __mMerch_timeadjust_left_html -->
+		<div class="mpopup moment_popup top left go_left">
+			<i class='fa fa-backward'></i>
+		</div>
+		<!-- __mMerch_timeadjust_right_html -->
+		<div class="mpopup moment_popup bottom left go_right">
+			<i class='fa fa-forward'></i>
+		</div>
+		<!-- __mMerch_delay_html -->
+		<div class="moment_barrier hidden"></div>
+		<!-- __mMerch_menu_open_clickregion_html -->
+		<div class="ghost_menu bottom right"></div>
+		<!-- __mMerch_menu_publisher_clickregion_html -->
+		<div class="ghost_menu top right"></div>
+		<!-- __mMerch_fill_html -->
+		<div class="fill hidden"></div>
+		<!-- __moment_arrow_html -->
+		<div class="moment_anchor arrow-down"></div>
+	</a>
+</script>
+
+<!-- __mEdit_new_html -->
+<script type='text/template' id='playhead_template'>
+	<div class="mthumb moment mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1 no-padding" data-moment="0" data-asset_id="0" data-asset_source="{{asset_source}}" data-asset_resource_id="{{asset_resource_id}}" data-time_start="0" data-image="{{thumbnail_background_image}}"
+	data-rows="{{thumbnail_background_image_rows}}" data-columns="{{thumbnail_background_image_columns}}" data-position="{{thumbnail_background_image_position}}" data-tag="{{tag}}">
+		<!-- __mEdit_new_thumb_html -->
+		<div class="mthumbnail moment_thumbnail"></div>
+		<!-- __mEdit_new_border_html -->
+		<div class="mborder border-box-sizing moment_border"></div>
+		<!-- __mEdit_new_tag_html -->
+		<div class="mtag moment_tag">{{tag}}</div>
+		<!-- __mEdit_new_save_html -->
+		<div class="mpopup moment_popup top right done"></div>
+		<!-- __mEdit_new_cancel_html -->
+		<div class="mpopup moment_popup bottom right cancel"></div>
+		<!-- __mEdit_new_timeadjust_left_html -->
+		<div class="mpopup moment_popup top left go_left">
+			<i class='fa fa-backward'></i>
+		</div>
+		<!-- __mEdit_new_timeadjust_right_html -->
+		<div class="mpopup moment_popup bottom left go_right">
+			<i class='fa fa-forward'></i>
+		</div>
+		<div class="fill"></div>
+		<!-- __mEdit_new_arrow_html -->
+		<div class="moment_anchor arrow-down"></div>
+	</div>
+</script>
+
+
+<!-- playlist //////////////////////////////////////// -->
+
+<!-- __pEdit_body_html -->
+<script type='text/template' id='pEdit_body_template'>
+	<!-- __pEdit_sequence_html -->
+	<div id='pEdit_sequence_wrapper' class='wrapper' style='min-height: 120px;background-color:#fff;color:black;'>
+		<div id='pEdit_sequence' class='carousel container'>
+			<!-- __pEdit_sequence_slot_html -->
+			<div class='current slot mthumb moment mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1 no-padding'>
+				<div class='mthumbnail font-medium'></div>
+			</div>
+		</div>
+	</div>
+   <!-- __pEdit_settings_html -->
+   <div id='pEdit_settings' class="wrapper">
+		<div class='container'>
+			<!-- __pEdit_search_field_html -->
+			<div class="mcol mcol-xs-1 mcol-sm-1 mcol-md-2 mcol-lg-2">
+				<input type='text' class='form-control no-border font-medium search' autocomplete='off' placeholder='Search' />
+			</div>
+			<div class="mcol mcol-xs-0 mcol-sm-1 mcol-md-1 mcol-lg-2">
+			</div>
+			<!-- __pEdit_autoadd_switch_html_include -->
+			<div class="mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1">
+				{{switch_handpick_autoadd.html}}
+			</div>
+		</div>
+	</div>
+
+   <!-- __pEdit_search_result_html -->
+	<div id='pEdit_result_wrapper' class="wrapper">
+		<div id='pEdit_result' class="container search-results">
+			<div class='title font-large'></div>
+			<div class='items clearfix'></div>
+			<!-- __site_searc_result_more_html -->
+			<div class='more hidden font-medium mcol mcol-xs-2'>More</div>
+		</div>
+	</div>
+</script>
+
+<!-- __pEdit_header_html -->
+<script type='text/template' id='pEdit_header_template'>
+	<div id='pEdit_header' class="wrapper">
+		<div class="container">
+			<!-- __pEdit_back_html -->
+			<div class="mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1 clearfix">
+				<div class='back pentagon font-medium'></div>
+			</div>
+			<!-- __pEdit_title_field_html -->
+			<div class="mcol mcol-xs-1 mcol-sm-2 mcol-md-1 mcol-lg-2">
+				<input type='text' class='form-control no-border font-medium title' autocomplete='off' placeholder='Remix Title' />
+			</div>
+			<!-- __pEdit_visibility_switch_html_include -->
+			<div class="mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1">
+				{{switch_public_private.html}}
+			</div>
+			<!-- _pEdit_create_button_html -->
+			<div class="mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1">
+				<a href='' class="button font-medium create" type="button">Save Remix</a>
+			</div>
+		</div>
+	</div>
+</script>
+
+<!-- __pEdit_autoadd_switch_html -->
+<script type='text/template' id='switch_handpick_autoadd_template'>
+	<label class="switch mode">
+		<input type="checkbox" class="switch-input">
+		<span class="switch-label font-medium" data-off="+ Sticky" data-on="Sticky On"></span>
+		<span class="switch-handle"></span>
+	</label>
+</script>
+
+<!-- __pEdit_visibility_switch_html -->
+<script type='text/template' id='switch_public_private_template'>
+	<label class="switch status">
+		<input type="checkbox" class="switch-input">
+		<span class="switch-label font-medium" data-off="Public" data-on="Private"></span>
+		<span class="switch-handle"></span>
+	</label>
+</script>
+
+<!-- __pMerch_html -->
+<script type='text/template' id='playlist_template'>
+	<a class="mthumb playlist mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1 no-padding" data-playlist="{{id}}" data-thumbnail="{{thumbnail}}" data-moment_count="{{moment_count}}" data-title="{{title}}" data-publisher={{user_id}}>
+		<!-- __pMerch_thumb_html -->
+      <div class="mthumbnail playlist_thumbnail">
+			<img src='' alt='' width="100%" height="100%" onError="$($(this).closest('.mthumb')).parent().find('.mthumb-part').remove();$(this).closest('.mthumb').remove();" />
+		</div>
+      <!-- __pMerch_border_html -->
+		<div class="mborder border-box-sizing playlist_border"></div>
+      <!-- __pMerch_title_html -->
+		<div class="mtag pMerch_title">{{title}}</div>
+      <!-- __pMerch_moment_count_html -->
+		<!-- <div class="moment_count font-small"></div> -->
+      <!-- __pMerch_viewcount_html -->
+		<div class="view_count font-small"></div>
+      <!-- __pMerch_visibility_status_html -->
+		<div class="status font-small hidden">Private</div>
+      <!-- __pMerch_menu_publisher_html -->
+		<div class="image_popup playlist_popup top cropping menu">
+			<img src='' alt='' width="100%" height="100%" />
+		</div>
+      <!-- __pMerch_menu_open_html -->
+		<div class="menu_popup playlist_popup bottom right menu">
+			<i class='fa fa-bars'></i>
+		</div>
+      <!-- __pMerch_menu_open_clickregion_html -->
+		<div class='ghost_menu bottom right'></div>
+      <!-- __pMerch_menu_publisher_clickregion_html -->
+		<div class='ghost_menu top right'></div>
+	</a>
+</script>
+
+<!-- __mMerch_menu_html -->
+<script type='text/template' id='mMerch_menu_template'>
+	<div class='menu_item_group'>
+		<ul class="menu_item">
+			<li class='menu_item_delete'><a href="#"><i class=""></i>Remove</a></li>
+			<li class='menu_item_edit'><a href="#"><i class=""></i>Edit</a></li>
+		</ul>
+	</div>
+</script>
+
+<!-- __mPlay_page_html -->
+<script type='text/template' id='mPlay_header_template'>
+	<div class="header wrapper" style="position: absolute; top: 0;">
+		<div class="container">
+         <!-- __mPlay_back_html -->
+			<div class="mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1 clearfix">
+				<div class='back pentagon font-medium'></div>
+			</div>
+			<div class="mcol mcol-xs-0 mcol-sm-1 mcol-md-2 mcol-lg-3 font-medium nowrap clearfix">
+				<!-- __pPlay_title_html -->
+				<div class='pPlay_header_title pMerch_title'></div>
+				<div class='playlist_wrap'>
+					<span class='moment_position'></span>
+					<!-- __pPlay_moment_tag_html -->
+					<span class='pPlay_header_moment_title mPlay_header_title'></span>
+					<!-- __pPlay_moment_tag_edit_html -->
+					<input type='text' class='form-control pPlay_header_moment_title_editable hidden' style='display:inline-block;padding:0px 5px;width:80%;' />
+				</div>
+				<!-- __mPlay_moment_tag_wrap_html -->
+				<div class='moment_wrap'>
+					<span class='mPlay_header_title'></span>
+				</div>
+			</div>
+			<div class="mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1" style='cursor:pointer;right:2%;'>
+            <!-- __pPlay_publisher_html -->
+				<div class='profile-menu bar noselect hidden' style='cursor:pointer;'>
+					<div class='profile_image user_image'>
+						<img src='' width='100%' height='100%' />
+					</div>
+					<div class='display_name font-medium' style=''></div>
+				</div>
+				<!-- __pPlay_moment_timeajust_html -->
+				<div class='adjustment bar noselect hidden' style='cursor:pointer;'>
+					<i class='fa fa-backward fa-2x' style='float:left;'></i>
+					<div class='font-medium' style='float: left;width: calc(100% - 4em);text-align: center;padding-top: 3px;'>Adjust Time</div>
+					<i class='fa fa-forward fa-2x' style='float:right;'></i>
+				</div>
+			</div>
+         <!-- __pPlay_title_wrap_html -->
+			<div class="mcol mcol-xs-2 mcol-sm-0 mcol-md-0 mcol-lg-0 font-medium nowrap clearfix">
+				<div class='pPlay_header_title pMerch_title'></div>
+				<div class='playlist_wrap'>
+					<span class='moment_position'></span>
+					<span class='pPlay_header_moment_title mPlay_header_title'></span>
+				</div>
+				<div class='moment_wrap'>
+					<span class='mPlay_header_title'></span>
+				</div>
+			</div>
+         <!-- __pPlay_header_error_instruction_html -->
+			<div class='error_message font-large hidden'></div>
+		</div>
+	</div>
+</script>
+
+<!-- __pNext_html -->
+<script type='text/template' id='next_template'>
+	<div class="mthumb moment mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1 no-padding next" data-moment="{{id}}" data-asset_id="{{asset_id}}" data-asset_source="{{asset_source}}" data-asset_resource_id="{{asset_resource_id}}" data-time_start="{{time_start}}"
+	data-image="{{thumbnail_background_image}}" data-rows="{{thumbnail_background_image_rows}}" data-columns="{{thumbnail_background_image_columns}}" data-position="{{thumbnail_background_image_position}}" data-tag="{{tag}}">
+		<div class="mthumbnail moment_thumbnail">
+			<img width='100%' height='100%' />
+			<div class='next_overlay syncopate font-medium'>Next</div>
+		</div>
+		<div class="mborder moment_border"></div>
+		<div class="mtag moment_tag">{{tag}}</div>
+	</div>
+</script>
+
+
+<!-- user //////////////////////////////////////// -->
+
+<!-- __uMerch_html  -->
+<script type='text/template' id='uMerch_template'>
+	<div class='mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1'>
+		<div class="profile_image user_image">
+			<img src="" width="100%" height="100%">
+		</div>
+		<div class="profile_info_wrapper">
+			<div class="display_name"></div>
+			<div class="follower_count"></div>
+		</div>
+	</div>
+</script>
+
+<!-- __uMerch_menu_logout_html -->
+<script type='text/template' id='uMerch_menu_template'>
+	<ul class='uMerch_menu popup-menu'>
+		<li class='item'><a id='logout-button' href='logout'>Log Out</a></li>
+	</ul>
+</script>
+
+<!-- __profile_page_html -->
+<script type='text/template' id='profile_template'>
+	<div id='profile-' class='omniknight clearfix'>
+      <!-- __profile_header_html -->
+		<div id='profile-top-bar' class="top-bar wrapper">
+			<div class="container noselect">
+            <!-- __profile_back_html -->
+				<div class="mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1 clearfix">
+					<div class='back pentagon font-medium'></div>
+				</div>
+				<div class="mcol mcol-xs-0 mcol-sm-0 mcol-md-1 mcol-lg-2">
+				</div>
+            <!-- __profile_follow_switch_html -->
+				<div class="mcol mcol-xs-0 mcol-sm-1 mcol-md-1 mcol-lg-1">
+					<label class="switch follow">
+						<input type="checkbox" class="switch-input">
+						<span class="switch-label font-medium" data-off="+ Follow" data-on="Following"></span>
+						<span class="switch-handle"></span>
+					</label>
+				</div>
+            <!-- __profile_user_merch_html -->
+				<div class="mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1 no-padding" style='padding-top:3px;cursor:pointer;'>
+					<div class='profile_image user_image'>
+						<img src='' width='100%' height='100%' />
+					</div>
+					<div class='display_name font-medium'>Name</div>
+				</div>
+			</div>
+		</div>
+      <!-- __profile_body_html -->
+		<div class='main-bar wrapper'>
+			<div class='container'>
+            <!-- __profile_playlist_html -->
+				<div id='user-public-playlists' class='clearfix feed-gap'>
+					<div class='title font-large'>Remix</div>
+					<div class='items clearfix'>
+					</div>
+					<!-- __profile_playlist_more_html -->
+					<div class='more hidden font-medium mcol mcol-xs-2'>More</div>
+				</div>
+            <!-- __profile_following_html -->
+				<div id='user-follows' class='clearfix feed-gap'>
+					<div class='title font-large'>
+						<div class='self display_name'>Name</div> follows
+						<div class='self follow_count'></div>
+					</div>
+					<div class='items clearfix'></div>
+					<!-- __profile_following_more_html -->
+					<div class='more hidden font-medium mcol mcol-xs-2'>More</div>
+				</div>
+            <!-- __profile_followedby_html -->
+				<div id='user-followers' class='clearfix feed-gap'>
+					<div class='title font-large'>
+						<div class='self follower_count'></div> follow
+						<div class='self display_name'>Name</div>
+					</div>
+					<div class='items clearfix'></div>
+					<!-- __profile_followedby_more_html -->
+					<div class='more hidden font-medium mcol mcol-xs-2'>More</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+
+<!--  feed //////////////////////////////////////// -->
+
+<!-- __feed_body_html  -->
+<script type='text/template' id='feed_template'>
+	<!-- fRow_recommend_html -->
+	<div id='fRow_recommend_selector' class='mrow hidden feed-playlist clearfix feed-gap ' data-index="0">
+		<div class='title font-large '>Recommended</div>
+		<div class='items clearfix'></div>
+		<!-- <div class='more hidden font-medium mcol mcol-xs-2'>More Playlists</div> ! -->
+	</div>
+	<!-- fRow_new_html -->
+	<div id='fRow_new_selector' class='mrow hidden feed-playlist clearfix feed-gap ' data-index="0">
+		<div class='title font-large '>New Remix</div>
+		<div class='items clearfix'></div>
+		<!-- <div class='more hidden font-medium mcol mcol-xs-2'>More Playlists</div> ! -->
+	</div>
+</script>
+
+
+<!--  my //////////////////////////////////////// -->
+
+<!-- __my_page_html -->
+<script type='text/template' id='my_template'>
+	<!-- __user_login_html_include -->
+	{{login.html}}
+	<!-- __history_upper_html -->
+	<div class='my-history visible mcol mcol-xs-2 clearfix feed-gap'>
+		<div class='title font-large'>My History</div>
+		<div class='items clearfix'></div>
+		<!-- __history_upper_more_html -->
+		<div class='more font-medium mcol mcol-xs-2'>More</div>
+	</div>
+	<!-- __playlist_my_html -->
+	<div id='my-playlists' class='mcol mcol-xs-2 clearfix feed-gap'>
+		<div class='title font-large'>My Remixes</div>
+		<div class='items clearfix'>
+			<!-- __playlist_new_button_html -->
+			<div id="playlist_new" class="mthumb playlist mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1 no-padding">
+				<div class="mthumbnail font-medium vmiddle">Create Remix</div>
+			</div>
+		</div>
+		<!-- __playlist_my_more_html -->
+		<div class='more font-medium mcol mcol-xs-2'>More</div>
+	</div>
+	<!-- __moment_my_html -->
+	<div id='my-moments' class='mcol mcol-xs-2 clearfix feed-gap'>
+		<div class='title font-large'>My Moments</div>
+		<div class='items clearfix'></div>
+		<!-- __moment_my_more_html -->
+		<div class='more font-medium mcol mcol-xs-2'>More</div>
+	</div>
+	<!-- __history_lower_html -->
+	<div class='my-history mcol mcol-xs-2 clearfix feed-gap'>
+		<div class='title font-large'>My History</div>
+		<div class='items clearfix'></div>
+		<!-- __history_lower_more_html -->
+		<div class='more font-medium mcol mcol-xs-2'>More</div>
+	</div>
+	<!-- __following_my_html -->
+	<div id='user-follows' class='clearfix feed-gap'>
+		<div class='title font-large'>
+			<div class='self display_name'>Name</div> follow
+			<div class='self follow_count'></div>
+		</div>
+		<div class='items clearfix'></div>
+		<!-- __following_my_more_html -->
+		<div class='more hidden font-medium mcol mcol-xs-2'>More</div>
+	</div>
+	<!-- __followedby_my_html -->
+	<div id='user-followers' class='clearfix feed-gap'>
+		<div class='title font-large'>
+			<div class='self follower_count'></div> follow
+			<div class='self display_name'>Name</div>
+		</div>
+		<div class='items clearfix'></div>
+		<!-- __followedby_my_more_html -->
+		<div class='more hidden font-medium mcol mcol-xs-2'>More</div>
+	</div>
+</script>
+
+
+<!--  other //////////////////////////////////////// -->
+
+<!-- __instruct_header_html -->
+<script type='text/template' id='instructions_template'>
+	<div class='instruction wrapper'>
+		<div class='container'>
+			<div class='dismiss'><i class='fa fa-close'></i></div>
+			<div class='message font-large'></div>
+		</div>
+	</div>
+</script>
+
+<!-- __user_login_html -->
+<script type='text/template' id='login_template'>
+	<div id='login-' class='guest mcol mcol-xs-2 clearfix'>
+		<div id='login-form' style='max-width:460px;margin:auto;'>
+			<!-- __user_login_google_hmml -->
+			<a class='btn btn-google' href='{{google-signup-link}}'>Log in using Google</a>
+			<!-- </div> -->
+		</div>
+	</div>
+</script>
+
+<!-- __site_header_html -->
+<script type='text/template' id='site_header_template'>
+	<div class='header wrapper'>
+		<div id='site_header' class='container'>
+			<!-- __site_header_logo_html -->
+			<div class='mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1'>
+				<a href='#feed' class='home bar highlight syncopate font-medium'>theMoment</a>
+			</div>
+			<div class='mcol mcol-xs-0 mcol-sm-0 mcol-md-0 mcol-lg-1'>
+				<div class='bar highlight syncopate no-border no-hover left-align font-medium'></div>
+			</div>
+			<!-- __site_header_search_html -->
+			<div class='mcol mcol-xs-0 mcol-sm-1 mcol-md-2 mcol-lg-2'>
+				<!-- <input type='text' class='bar form-control no-border font-medium' autocomplete='off' placeholder='Search' name='search' id='search'/> -->
+			</div>
+			<!-- __site_header_user_html -->
+			<div class='mcol mcol-xs-1 mcol-sm-1 mcol-md-1 mcol-lg-1'>
+				<div class='profile-menu guest bar noselect' style='cursor:pointer;'>
+					<div class='anonymous profile_image user_image'>
+						<img src='' width='100%' height='100%' />
+					</div>
+					<div class='anonymous display_name font-medium' style=''>Sign In</div>
+				</div>
+				<div class='profile-menu registered bar noselect' style='cursor:pointer;'>
+					<div class='self profile_image user_image'>
+						<img src='' width='100%' height='100%' />
+					</div>
+					<div class='self display_name font-medium' style=''></div>
+				</div>
+			</div>
+			<!-- __site_header_search_right_html -->
+			<div class='mcol mcol-xs-2 mcol-sm-0 mcol-md-0 mcol-lg-0'>
+				<!-- <input type='text' class='bar form-control' autocomplete='off' placeholder='Search' name='search' id='search'/> -->
+			</div>
+		</div>
+	</div>
+</script>
+
+<!-- site_body_html -->
+<script type='text/template' id='site_body_template'>
+	<div id='feed-' class='frame mcol mcol-xs-2 no-padding clearfix'>
+	</div>
+	<div id='playlists-' class='frame mcol mcol-xs-2 no-padding clearfix'>
+	</div>
+</script>
+
+<!-- pPromo_carousel_?_html -->
+<script type='text/template' id='carousel_template'>
+	<div class="carousel slide" data-ride="carousel">
+	  <!-- Indicators -->
+	  <ol class="carousel-indicators"></ol>
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner"></div>
+	  <!-- Controls -->
+	  <a class="left carousel-control" href="" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left"></span>
+	  </a>
+	  <a class="right carousel-control" href="" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right"></span>
+	  </a>
+	</div>
+</script>
+
+<!-- pPromo_carousel_item_html -->
+<script type='text/template' id='pPromo_item_template'>
+	<div class='pPromo_item clearfix' style="width:90%;margin:auto;">
+      <!-- pPromo_item_thumb_html -->
+		<div class='pPromo_thumb'>
+			<img class='pPromo_thumb_1' width="90%" height="100%"/>
+			<img class='pPromo_thumb_2' width="90%" height="90%"/>
+			<img class='pPromo_thumb_3' width="90%" height="80%"/>
+			<a href='#' class='pPromo_thumb_play vmiddle'><span class='fa fa-play-circle-o'></span></a>
+		</div>
+      <!-- pPromo_item_detail_html -->
+		<div class='section_right'>
+			<a class='pPromo_title'></a>
+			<div class='clearfix'>
+				<div style="width:23%;float:left;">
+					<a href='#' class='pPromo_user_image'>
+						<img class='user_image' style='border-radius:50%;' width="100%" height="100%"/>
+					</a>
+				</div>
+				<div style="width:77%;float:left;">
+					<div class='pPromo_detail'>
+						<div class='pMerch_title tags'></div>
+						<div class='pMerch_title'><span class='pPromo_detail_moment_count'></span><span class='min-tablet pPromo_detail_moment_count_suffix'></span> by <span class='pPromo_detail_publisher_name'></span></div>
+						<div class='pMerch_title'>Remixed <span class='pPromo_detail_time_ago'></span> ago</div>
+						<div class='pMerch_title pPromo_detail_view_count'></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<!-- pPromo_carousel_html -->
+<script type='text/template' id='pPromo_carousel_template'>
+	<div id="pPromo_carousel" class="carousel slide" data-ride="carousel">
+		<!-- Indicators -->
+		<ol class="carousel-indicators">
+		</ol>
+
+		<!-- Wrapper for slides -->
+		<div class="carousel-inner" role="listbox">
+		</div>
+
+		<!-- Left and right controls -->
+		<a class="left pPromo_carousel_left carousel-control" href="#pPromo_carousel" role="button" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="right pPromo_carousel_right carousel-control" href="#pPromo_carousel" role="button" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+	<style>
+	.carousel-inner > .item > img,
+	.carousel-inner > .item > a > img {
+		width: 70%;
+		margin: auto;
+	}
+  </style>
+</script>

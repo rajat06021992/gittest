@@ -1,0 +1,134 @@
+input[type="text"].form-control{
+	height		: auto;
+	padding		: #{($button_height_small - floor($factor*$text_font_size_medium_small/1*1) - 2)/2} 12px;
+	@media (min-width: $breakpoint_mobile){
+		padding	: #{($button_height_mobile - floor($factor*$text_font_size_medium_mobile/1*1) - 2)/2} 12px;
+	}
+	@media (min-width: $breakpoint_tablet){
+		padding	: #{($button_height_tablet - floor($factor*$text_font_size_medium_tablet/1*1) - 2)/2} 12px;
+	}
+	@media (min-width: $breakpoint_full){
+		padding	: #{($button_height_full - floor($factor*$text_font_size_medium_full/1*1) - 2)/2} 12px;
+	}
+}
+.carousel-control{
+	width: 5%;
+	background-color: transparent;
+	opacity: .2;
+	// transition-duration: 200ms;
+	// transition-property: opacity;
+}
+.carousel:hover .carousel-control{
+	opacity: .6;
+	background-color: $color_teal_darkest;
+}
+.carousel-indicators{
+	bottom: -20px;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev{
+	@include transform(translateY(-50%));
+}
+@media screen and (min-width: 768px){
+	.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
+		margin-top: 0px;
+	}
+}
+.carousel-indicators .active, .carousel-indicators li{
+	margin-right: 5px;
+}
+.carousel-indicators li{
+	background-color: $color_teal_dark;
+	border-color: $color_teal_dark;
+}
+.carousel-control.left,.carousel-control.right{
+	background-image: none;
+}
+.carousel-control.left{
+	display: none;
+}
+ol,ul{
+	margin-bottom: 0px;
+}
+.btn{
+	vertical-align: top;
+}
+.container{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+.modal-backdrop{
+	display:none;
+}
+.input-group-addon{
+	min-width: 90px;
+}
+.icon-bar {
+	margin-bottom:3px;
+	display: block;
+	height: 3px;
+	background-color: #cccccc;
+	border-radius: 1px;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.btn-facebook {
+  background-image: -webkit-linear-gradient(top, #3b5998 0%, #2b4170 100%);
+  background-image:      -o-linear-gradient(top, #3b5998 0%, #2b4170 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#3b5998), to(#2b4170));
+  background-image:         linear-gradient(to bottom, #3b5998 0%, #2b4170 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3b5998', endColorstr='#ff2b4170', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #2b4170;
+  color: #fff;
+}
+.btn-facebook:hover,
+.btn-facebook:focus {
+  background-color: #2b4170;
+  background-position: 0 -15px;
+  color: #fff;
+}
+.btn-facebook:active,
+.btn-facebook.active {
+  background-color: #2b4170;
+  border-color: #2b4170;
+}
+.btn-facebook.disabled,
+.btn-facebook:disabled,
+.btn-facebook[disabled] {
+  background-color: #419641;
+  background-image: none;
+}
+
+// __user_login_button_html_css
+.btn-google {
+  background-image: -webkit-linear-gradient(top, #e64522 0%, #c33219 100%);
+  background-image:      -o-linear-gradient(top, #e64522 0%, #c33219 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#e64522), to(#c33219));
+  background-image:         linear-gradient(to bottom, #e64522 0%, #c33219 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffe64522', endColorstr='#ffc33219', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  background-repeat: repeat-x;
+  border-color: #c33219;
+  color: #fff;
+}
+.btn-google:hover,
+.btn-google:focus {
+  background-color: #c33219;
+  background-position: 0 -15px;
+  color: #fff;
+}
+.btn-google:active,
+.btn-google.active {
+  background-color: #c33219;
+  border-color: #c33219;
+}
+.btn-google.disabled,
+.btn-google:disabled,
+.btn-google[disabled] {
+  background-color: #419641;
+  background-image: none;
+}

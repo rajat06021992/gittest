@@ -1,0 +1,195 @@
+///////////////////////////////
+// standard format
+
+// __mMerch_border_html_css
+.moment_border{
+	border          : $border_width solid $color_transparent;
+}
+
+// __mMerch_tag_html_css
+.moment_tag[contenteditable="true"]{
+	display: block;
+	max-height: 2.7em;
+	text-overflow: clip;
+	text-shadow: none;
+	background-image: none;
+	padding-top: 0px;
+}
+// __mMerch_border_hover_html_css
+.moment:hover .moment_border{
+	border          : $border_width solid $color_teal;
+}
+
+///////////////////////////////
+// edit mode
+
+// __mEdit_new_border_html_css
+.moment.edit_mode .moment_border{
+	border-color    : $color_white;
+	z-index: 4;
+}
+// __mEdit_new_border_hover_html_css
+.moment.edit_mode:hover .moment_border{
+	border-color    : 1px solid $color_white;
+}
+// __mEdit_new_tag_html_css
+.moment.edit_mode .moment_tag{
+	background-color: $color_white;
+	color           : $color_black;
+}
+
+// __mEdit_new_arrow_html_css
+.moment_anchor{
+	position: absolute;
+	bottom: -5px;
+	left: 50%;
+	margin-left: -5px;
+	display: none;
+}
+
+///////////////////////////////
+
+// __mList_moment_arrow_html_css
+#moment_list .moment_anchor.arrow-down {
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid $color_transparent;
+}
+// __mList_moment_arrow_html_css
+.no-touch #moment_list .moment_anchor{
+	display: block;
+}
+// __mList_moment_hover_html_css
+#moment_list .moment:hover .moment_anchor.arrow-down,
+#moment_list .moment.edit_mode:hover .moment_anchor.arrow-down{
+	border-top-color: $color_teal_dark;
+}
+
+// __mList_hover_html_css
+#moment_list .moment:hover{
+	z-index: 100;
+}
+// __mMerch_fill_html_css
+.moment .fill{
+	position: absolute;
+	bottom: -4px;
+	height: 4px;
+	background: transparent;
+	width: calc(100% - 20px);
+}
+
+///////////////////////////////
+// __mMerch_menu_open_ghost_html_css
+.ghost_menu{
+	position: absolute;
+	right: 0px;
+	height: 50%;
+	width: 25%;
+	background: transparent;
+	z-index: 10;
+}
+.no-touch .ghost_menu,#next_list .ghost_menu{
+	display: none;
+}
+
+///////////////////////////////
+// __mMerch_tag_wrapped_html_css
+.moment_wrap{
+	text-align: center;
+	line-height: 1;
+	padding-top: 0.5em;
+	text-overflow	: ellipsis;
+	white-space		: nowrap;
+	max-width		: 100%;
+	overflow			: hidden;
+}
+// __pPlay_moment_tag_wrapped_html_css
+.playlist-mode .moment_wrap{
+	display: none;
+}
+// __pPlay_title_wrapped_html_css
+.moment-mode .playlist_wrap,.moment-mode .playlist_title{
+	display: none;
+}
+
+///////////////////////////////
+// __pPlay_moment_timeajust_html_css
+.moment_adjustment{
+	position               : fixed;
+	height                 : 20px;
+	background             : $color_teal_light;
+	color                  : $color_black;
+	border-top-right-radius: $radius_small;
+	border-top-left-radius : $radius_small;
+	z-index                : 1000;
+	text-align             : center;
+}
+// __mMerch_barrier_html_css
+.moment_barrier{
+	position        : absolute;
+	z-index         : 4;
+	top             : 0px;
+	left            : 0px;
+	width           : calc(100% - #{$thumb_gap_right});
+	height          : 100%;
+	background-color: $color_white_20_transparent;
+	white-space     : normal;
+	text-align      : center;
+	padding-top     : 11px;
+	font-size		 : 13px;
+	color				 : $color_teal_dark;
+	line-height		 : $media_text_lineheight;
+}
+.edit_mode .moment_barrier{
+	display: none;
+}
+// __history_html_css
+.my-history .moment{
+	margin-bottom: 16px;
+}
+
+// __pNext_mMerch_hover
+.mthumb .mplay{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	z-index: 4;
+	font-size: 4em;
+	opacity: 0;
+	transition-duration: 200ms;
+	transition-property: opacity;
+	display: none;
+}
+#next_list .mthumb .mplay{
+	display: block;
+}
+#next_list .mthumb:hover .mplay{
+	opacity: 0.75;
+}
+.mplay .fa{
+	color: $color_white;
+}
+
+
+// __mMerch_menu_open_html_css
+.moment_popup{
+}
+// __mMerch_menu_open_touch_html_css
+.touch .moment_popup.menu{
+	display: block;
+}
+
+.moment.edit_mode{
+	z-index: 1002;
+}
+.twitch-profile-page .mpopup,.twitch-search-page .mpopup{
+	display: none !important;
+}
+.twitch-profile-page .moment_barrier,.twitch-search-page .moment_barrier{
+	display: none !important;
+}

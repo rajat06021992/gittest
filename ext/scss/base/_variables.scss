@@ -1,0 +1,154 @@
+///////////////////////////////////////////////////////////////////////////////
+//  Common Elements across multiple pages
+///////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////
+// __site_color_html_css_variable
+$color_white                : #ddd;
+$color_white_20_transparent : rgba(255, 255, 255, 0.60);
+$color_white_off            : #ccc;
+$color_black                : #000;
+$color_black_20_transparent : rgba(0, 0, 0, 0.80);
+$color_black_50_transparent : rgba(0, 0, 0, 0.50);
+$color_black_80_transparent : rgba(0, 0, 0, 0.20);
+$color_logo                 : #45818e;
+$color_logo_dark            : #08242a;
+$color_teal                 : #606060; // 69,129,142
+$color_teal_light           : #808080; // 118,165,175
+$color_teal_dark            : #303030; // #05181d; // #333; // 12,52,61
+$color_teal_darkest         : #101010; // 5,24,29
+$color_teal_dark_80         : rgba(20, 20, 20, .75);
+$color_green                : #214611;
+$color_green_light          : #38761D; // Used in slide
+$color_red                  : #660000;
+$color_blue		             : #7f0000;
+$color_transparent          : transparent;
+// pPlay mode
+
+$playlist_create_background : $color_teal_darkest; // PDSPDS rgb(69,129,142);
+$playlist_create_foreground : $color_red; // PDSPDS rgb(118,165,175);
+
+$factor : 1.42857143;
+$scope  : '.themoment-tv';
+
+$twitch_standard_font_size    : 13px;
+$youtube_standard_font_size   : 13px;
+
+////////////////////////////////////
+// __site_breakpoint_html_css_variable
+$breakpoint_mobile  : 480px;
+$breakpoint_tablet  : 640px;
+$breakpoint_full    : 992px;
+
+////////////////////////////////////
+// __site_text_size_html_css_variable
+$text_font_size_large_full       : 22px;
+$text_font_size_medium_full      : 20px;
+$text_font_size_small_full       : 20px;
+$text_font_size_smallest_full    : 14px;
+
+$text_font_size_large_tablet     : 18px;
+$text_font_size_medium_tablet    : 16px;
+$text_font_size_small_tablet     : 14px;
+$text_font_size_smallest_tablet  : 13px;
+
+$text_font_size_large_mobile     : 18px;
+$text_font_size_medium_mobile    : 16px;
+$text_font_size_small_mobile     : 14px;
+$text_font_size_smallest_mobile  : 12px;
+
+$text_font_size_large_small      : 16px;
+$text_font_size_medium_small     : 16px;
+$text_font_size_small_small      : 14px;
+$text_font_size_smallest_small   : 11px;
+
+$text_shadow_offset              : 1px;
+
+// __site_general_html_css_variable
+$border_width       : 2px;
+$gap_vertical       : 8px;
+$button_padding_top : 0px;
+
+$radius_small       : 5px;
+$radius_medium      : 10px;
+$radius_mgroup      : 20px;
+
+$button_height_full   : 40px;
+$button_height_tablet : 36px;
+$button_height_mobile : 34px;
+$button_height_small  : 32px;
+
+// mList_reset
+$mList_background_color     : $color_black_50_transparent;
+
+// __media_thumb_border_html_css_variable
+$thumb_border_color       : $color_black;
+$thumb_border_color_hover : $color_white;
+$thumb_border_width       : $border_width;
+
+// __media_text_lineheight
+$media_text_lineheight    : 1.4;
+
+// __mMerch_border_html_css_variable
+$moment_border_color      : $color_black;
+$moment_border_color_hover: $color_white;
+$moment_border_width      : $border_width;
+
+// __pPlay_next_border_html_css_variable
+$next_border_color        : $color_blue;
+$next_border_color_hover  : $color_white;
+$next_border_width        : $border_width;
+
+$thumb_gap_right : 3px; // thumbs should always be 16x9, and this should be % of column
+
+// __pMerch_html_css_variable
+$playlist_view_count_bottom              : 25px;
+$playlist_title_padding_top              : 15px;
+$playlist_title_padding_left             : 15px;
+$playlist_shadow_horizontal_offset       : 7px;
+$playlist_shadow_vertical_offset         : 7px;
+$pMerch_publisher_left_default           : -40px;
+$pMerch_publisher_top_default           : -20px;
+//Playlist Title Shadow
+$text_shadow_blur  : 2px;
+// $playlist_title_shadow_color : #000;
+
+// __mMerch_html_css_variable
+$moment_count_horizontal_padding         : 0px;
+$moment_count_vertical_padding           : 8px;
+
+// __feed_html_css_variable
+$feed_gap_small  : 10px;
+$feed_gap_mobile : 14px;
+$feed_gap_table  : 16px;
+$feed_gap_full   : 20px;
+
+// __site_back_button_html_css_variables
+$back_border_full   : 20px;
+$back_border_tablet : 18px;
+$back_border_mobile : 17px;
+$back_border_small  : 17px;
+
+// __pEdit_autoadd_switch_html_css_variable
+$switch_off_background : $color_black;
+$switch_on_background  : $color_logo;
+$switch_off_text_color : $color_logo;
+$switch_on_text_color  : $color_logo_dark;
+$switch_handle         : $color_logo_dark;
+
+//Follow Switch
+$follow_switch_off_background : $color_black;
+$follow_switch_on_background  : $color_logo;
+$follow_switch_off_text_color : $color_logo;
+$follow_switch_on_text_color  : $color_logo_dark;
+$follow_switch_handle         : $color_logo_dark;
+
+// Back button
+$back_background        : $color_white;
+$back_background_hover  : $color_logo;
+
+// Promo title font size
+$text_font_size_promo_title_full   : 50px;
+$text_font_size_promo_title_tablet : 24px;
+$text_font_size_promo_title_mobile : 18px;
+$text_font_size_promo_title_small  : 13px;

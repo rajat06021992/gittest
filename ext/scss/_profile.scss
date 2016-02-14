@@ -1,0 +1,115 @@
+.profile_image{
+   display: inline-block;
+   overflow: hidden;
+   border-radius: 100%;
+   width: 50px;
+   height: 50px;
+}
+.profile-menu .profile_image{
+   width: 32px;
+   height: 32px;
+   @media (min-width: $breakpoint_mobile){
+      width: 36px;
+      height: 36px;
+   }
+   @media (min-width: $breakpoint_tablet){
+      width: 36px;
+      height: 36px;
+   }
+   @media (min-width: $breakpoint_full){
+      width: 40px;
+      height: 40px;
+   }
+}
+.display_name{
+   text-overflow : ellipsis;
+   white-space   : nowrap;
+   overflow      : hidden;
+   color         : $color_white;
+   text-shadow   : 0px 0px 4px #000;
+   max-width     : 100%;
+   cursor        : pointer;
+   text-align    : left;
+}
+.profile-menu .display_name{
+   display       : inline-block;
+   vertical-align: top;
+   color         : $color_white;
+   text-shadow   : 0px 0px 4px #000;
+   padding-top   : 7px;
+   padding-left  : 5px;
+   width         : 100%;
+   max-width     : calc(100% - 36px);
+   @media (min-width: $breakpoint_mobile){
+      max-width: calc(100% - 40px);
+      padding-top   : 8px;
+   }
+   @media (min-width: $breakpoint_tablet){
+      max-width: calc(100% - 40px);
+      padding-top   : 9px;
+   }
+   @media (min-width: $breakpoint_full){
+      max-width: calc(100% - 44px);
+      padding-top   : 10px;
+   }
+}
+.title .display_name{
+   display: inline-block;
+   vertical-align: top;
+}
+.profile-menu:hover .display_name{
+   color: #fff;
+}
+.profile_info_wrapper{
+   max-width: calc(100% - 50px);
+   display: inline-block;
+   padding: 5px 0px 0px 10px;
+   vertical-align: top;
+}
+.follower_count:not(.self){
+   color: #0c343d;
+}
+.self.follow_count,.self.follower_count{
+   display: inline-block;
+}
+.user_image{
+   border: $border_width solid $color_teal_light;
+}
+.user_image:hover{
+   border: $border_width solid $color_white;
+}
+
+#profile- .main-bar{
+   background-color: $color_teal_darkest;
+   min-height: 100%;
+}
+
+#profile-top-bar{
+   background-color: $color_logo_dark;
+}
+#profile-top-bar .display_name{
+   padding: 15px 0px 0px 15px;
+   width: 100%;
+   display: inline-block;
+   max-width: calc(100% - 54px);
+   vertical-align: top;
+   color: $color_white;
+   text-shadow       : 0px 0px 4px #000;
+}
+
+// __userprofile_follow_switch_html_css
+.follow .switch-label {
+   background-color: $follow_switch_off_background;
+   &:before {
+      color: $follow_switch_off_text_color;
+   }
+   &:after{
+      color: $follow_switch_on_text_color;
+   }
+}
+.follow .switch-input:checked ~ .switch-label{
+   background-color: $follow_switch_on_background;
+}
+.follow .switch-handle{
+   background-color: $follow_switch_handle;
+}

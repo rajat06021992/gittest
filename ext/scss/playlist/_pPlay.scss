@@ -1,0 +1,11 @@
+// __pPlay_header_title_html_css
+.playlist-mode .pPlay_header_title{
+	color          : $color_white;
+}
+.playlist-mode .playlist_wrap{
+	color          : $color_white;
+   text-overflow	: ellipsis;
+	white-space		: nowrap;
+	max-width		: 100%;
+	overflow			: hidden;
+}

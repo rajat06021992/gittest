@@ -1,0 +1,46 @@
+// __history_html_css
+.my-history{
+   display: none;
+}
+.my-history.visible{
+   display: block;
+}
+// __site_more_html_css
+.more{
+	cursor           : pointer;
+	color            : $color_teal_dark;
+	background-color : $color_teal_darkest;
+	text-align       : center;
+	width            : calc(100% - $thumb_gap_right);
+	margin-top       : 15px;
+	border-radius    : $radius_small;
+}
+.more:hover{
+	color            : $color_teal_darkest;
+	background-color : $color_teal_dark;
+}
+.popup-menu{
+	padding         : 0px 0px;
+	list-style      : none;
+	display         : none;
+	background      :	$color_green_light;
+	border-radius   : 0px 0px $radius_small $radius_small;
+	z-index         : 1004;
+	text-align      : center;
+	color           : $color_teal_light;
+}
+.popup-menu li.item{
+	padding         : 5px;
+	cursor          : pointer;
+	transition      : all 300ms;
+}
+.popup-menu li.item a{
+	color      : $color_teal_light;
+	display	  : block;
+	width		  : 100%;
+}
+.popup-menu li.item:hover a{
+	color      : $color_white;
+}
+.popup-menu li.item:hover{
+}

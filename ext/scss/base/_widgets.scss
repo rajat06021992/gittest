@@ -1,0 +1,420 @@
+///////////////////////////
+// __site_logo_html_css
+.host .highlight,.ext .highlight{
+	width            : 100%;
+	border-radius    : $radius_medium;
+	border           : $border_width solid $color_white;
+	background-color : $color_transparent;
+	color            : $color_white;
+	padding          : 4px 0px;
+	text-align       : center;
+   text-decoration  : none;
+	display          : block;
+	cursor           : pointer;
+	transition       : all 300ms;
+	@media (min-width: $breakpoint_mobile){
+		padding: 5px 0px;
+	}
+}
+.host .highlight:hover,.ext .highlight:hover{
+//	background-color : $color_white_20_transparent;
+	border           : $border_width solid $color_logo;
+	color            : $color_logo;
+}
+.host .highlight.no-border,.ext .highlight.no-border{
+	border           : 0px;
+	//margin-top       : $border_width*2;
+}
+.host .highlight.no-hover:hover,.ext .highlight.no-border:hover{
+	color            : inherit;
+	background-color : inherit;
+}
+.host .highlight.left-align,.ext .highlight.left-align{
+	text-align       : left;
+}
+
+///////////////////////////
+// __user_login_button_html_css
+.host .button,.ext .button{
+	width            : 100%;
+	border-radius    : $radius_small;
+	background-color : $color_green;
+	color            : $color_white_off;
+	text-align       : center;
+   display          : block;
+   cursor           : pointer;
+	transition       : all 300ms;
+	padding          : #{($button_height_small - floor($factor*$text_font_size_medium_small/1*1))/2} 0px;
+	@media (min-width: $breakpoint_mobile){
+		padding		  : #{($button_height_mobile - floor($factor*$text_font_size_medium_mobile/1*1))/2} 0px;
+	}
+	@media (min-width: $breakpoint_tablet){
+		padding		  : #{($button_height_tablet - floor($factor*$text_font_size_medium_tablet/1*1))/2} 0px;
+	}
+	@media (min-width: $breakpoint_full){
+		padding		  : #{($button_height_full - floor($factor*$text_font_size_medium_full/1*1))/2} 0px;
+	}
+}
+.host .button       :hover,.ext .button:hover{
+	color            : $color_white;
+	background-color : $color_green_light;
+   text-decoration  : none;
+}
+
+///////////////////////////
+// __site_back_button_html_css
+.pentagon{
+	width           : 0;
+	height          : 0;
+	border-top      : $button_height_small/2 solid transparent;
+	border-right    : $button_height_small/2 solid $back_background;
+	border-bottom   : $button_height_small/2 solid transparent;
+	float           : left;
+	transition      : all 300ms;
+}
+.pentagon:before{
+	position        : absolute;
+	width           : calc(100% - 40px);
+	height          : calc(100% - 16px);
+	top             : 8px;
+	left            : $button_height_small/2;
+	padding-top     : $button_height_small/6;
+	content         : 'Remixes';
+   text-align      : center;
+	background-color: $back_background;
+   color           : $color_logo_dark;
+	display         : inline-block;
+	cursor          : pointer;
+	transition      : all 300ms;
+}
+.pentagon:hover{
+	border-right: $button_height_small/2 solid $back_background_hover;
+}
+.pentagon:hover:before{
+	background-color: $back_background_hover;
+   color           : $color_white;
+}
+
+@media (min-width: $breakpoint_mobile){
+	.pentagon{
+		border-top   : $button_height_mobile/2 solid transparent;
+		border-right : $button_height_mobile/2 solid $back_background;
+		border-bottom: $button_height_mobile/2 solid transparent;
+	}
+	.pentagon:before{
+		left         : $button_height_mobile/2;
+		padding-top  : $button_height_mobile/6;
+	}
+	.pentagon:hover{
+		border-right : $button_height_mobile/2 solid $back_background_hover;
+	}
+}
+@media (min-width  : $breakpoint_tablet){
+	.pentagon{
+		border-top   : $button_height_tablet/2 solid transparent;
+		border-right : $button_height_tablet/2 solid $back_background;
+		border-bottom: $button_height_tablet/2 solid transparent;
+	}
+	.pentagon:before{
+		left         : $button_height_tablet/2;
+		padding-top  : $button_height_tablet/6;
+	}
+	.pentagon:hover{
+		border-right : $button_height_tablet/2 solid $back_background_hover;
+	}
+}
+@media (min-width  : $breakpoint_full){
+	.pentagon{
+		border-top   : $button_height_full/2 solid transparent;
+		border-right : $button_height_full/2 solid $back_background;
+		border-bottom: $button_height_full/2 solid transparent;
+	}
+	.pentagon:before{
+		left         : $button_height_full/2;
+		padding-top  : $button_height_full/6;
+	}
+	.pentagon:hover{
+		border-right : $button_height_full/2 solid $back_background_hover;
+	}
+}
+
+///////////////////////////
+// __pEdit_autoadd_switch_html_css
+$switchTransition: .25s ease-out;
+
+.switch {
+	position  : relative;
+	width     : 100%;
+	height    : $button_height_small;
+	@media (min-width: $breakpoint_mobile){
+		height : $button_height_mobile;
+	}
+	@media (min-width: $breakpoint_tablet){
+		height : $button_height_tablet;
+	}
+	@media (min-width: $breakpoint_full){
+		height : $button_height_full;
+	}
+	background-color : $color_transparent;
+	border-radius    : $radius_mgroup;
+	vertical-align   : top;
+	margin-bottom    : 0px;
+	display          : inline-block;
+	cursor           : pointer;
+	box-sizing       : content-box;
+}
+
+.switch-input {
+  position: absolute;
+  top     : 0;
+  left    : 0;
+  opacity : 0;
+}
+
+.switch-label {
+  position       : relative;
+  height         : inherit;
+  background     : $switch_off_background;
+  border-radius  : inherit;
+  font-weight    : normal;
+  display        : block;
+  @include transition($switchTransition);
+  @include transition-property(opacity background);
+
+  &:before, &:after {
+    position     : absolute;
+    top          : 50%;
+    margin-top   : -.5em;
+    line-height  : 1;
+    @include transition(inherit);
+  }
+
+  &:before {
+    content      : attr(data-off);
+    width        : 100%;
+	 left         : 15px;
+	 text-align   : center;
+    color        : $switch_off_text_color;
+  }
+
+  &:after {
+    content      : attr(data-on);
+	 width        : 100%;
+	 left         : -15px;
+	 text-align   : center;
+    color        : $switch_on_text_color;
+    opacity      : 0;
+  }
+
+  .switch-input:checked ~ & {
+    background   : $switch_on_background;
+    &:before { opacity: 0; }//No gap between & and :
+    &:after  { opacity: 1; }//No gap between & and :
+  }
+}
+.switch-label.sticky_stream:after{
+	content			: attr(data-sticky_stream);
+}
+
+.switch-handle {
+	position: absolute;
+		top    : $border_width;
+		left   : $border_width;
+		width  : $button_height_small - $border_width*2;
+		height : $button_height_small - $border_width*2;
+	@media (min-width: $breakpoint_mobile){
+		top    : $border_width;
+		left   : $border_width;
+		width  : $button_height_mobile - $border_width*2;
+		height : $button_height_mobile - $border_width*2;
+	}
+	@media (min-width: $breakpoint_tablet){
+		top    : $border_width;
+		left   : $border_width;
+		width  : $button_height_tablet - $border_width*2;
+		height : $button_height_tablet - $border_width*2;
+	}
+	@media (min-width: $breakpoint_full){
+		top    : $border_width;
+		left   : $border_width;
+		width  : $button_height_full - $border_width*2;
+		height : $button_height_full - $border_width*2;
+	}
+	background: $switch_handle;
+	border-radius: 28px;
+	@include transition(left #{$switchTransition});
+	&:before {
+		content      : '';
+		position     : absolute;
+		top          : 50%;
+		left         : 50%;
+		margin       : -6px 0 0 -6px;
+		width        : 0px;
+		height       : 12px;
+		background   : #f9f9f9;
+		border-radius: $radius_small;
+	}
+
+	.switch-input:checked ~ & {
+		// @Refazul, I messed this up a bit (checked is off), but I'm trying to minize arbitrary variables.
+		left    : calc(100% - #{($button_height_small  - $border_width*1)}); // @Refazul, When I use $button_height_small, it does not work at all. Not sure why?
+		@media (min-width: $breakpoint_mobile){
+			left : calc(100% - #{($button_height_mobile  - $border_width*1)});
+		}
+		@media (min-width: $breakpoint_tablet){
+			left : calc(100% - #{($button_height_tablet  - $border_width*1)});
+		}
+		@media (min-width: $breakpoint_full){
+			left : calc(100% - #{($button_height_full    - $border_width*1)});
+		}
+	}
+}
+
+.switch-green > .switch-input:checked ~ .switch-label { background: #4fb845; }
+
+
+///////////////////////////
+// @refazul, what's this used for?
+input[type="text"],input[type="password"]{
+   background-color   : $playlist_create_background;
+   color              : $color_teal_darkest;
+   border-color       : $playlist_create_background;
+}
+input[type="text"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder {
+   color              : $color_teal_dark;
+}
+input[type="text"],input[type="password"]{
+   transition-duration: 200ms;
+   transition-property: background-color;
+   border-radius      : 0px;
+}
+input[type="text"]:focus,input[type="text"]:hover,
+input[type="password"]:focus,input[type="password"]:hover {
+   background-color   : $color_white !important;
+}
+input[type="text"]:focus::-webkit-input-placeholder,
+input[type="password"]:focus::-webkit-input-placeholder {
+   color              : transparent;
+}
+
+.no-touch #touch_input{
+	display: none;
+}
+#touch_input{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: $color_black;
+	z-index: 1000;
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+}
+#touch_input input[type="text"]{
+	width: 48%;
+	margin-right: 1%;
+	margin-left: 1%;
+	display: inline-block;
+}
+#touch_input .button{
+	display: inline-block;
+	width: 24%;
+	margin-right: 1%;
+	margin-top: 1%;
+}
+
+.vertical_bar{
+	height: calc(100% - 10px);
+	background-color: $color_teal_light;
+	width: 3px;
+	float: right;
+	margin-right: 3px;
+	margin-top: 5px;
+	transition: all 200ms;
+}
+
+.vertical_bar:hover{
+	background-color: $color_logo;
+}
+.curtain{
+	width: 5%;
+	position: absolute;
+	background: $color_black;
+	z-index: 11;
+	display: none;
+}
+.host.playlist-mode .curtain{
+	display: block;
+}
+.touch .curtain.right{
+	display: none;
+}
+.curtain.right{
+	right: 0px;
+}
+.curtain.left{
+	left: 0px;
+}
+
+.bar{
+	height: 32px;
+	@media (min-width: $breakpoint_mobile){
+		height: 36px;
+	}
+	@media (min-width: $breakpoint_tablet){
+		height: 36px
+	}
+	@media (min-width: $breakpoint_full){
+		height: 40px;
+	}
+}
+
+#transparent_layer{
+	position: absolute;
+	width: 100%;
+	z-index: 5;
+}
+.pointer-event-fill{
+	pointer-events: fill;
+}
+.pointer-event-none{
+	pointer-events: none;
+}
+
+::-webkit-scrollbar{
+	display: none;
+}
+::-moz-scrollbar{
+	display: none;
+}
+
+.btn-google{
+	display: block;
+}
+
+.preloader{
+	background-image: url('../images/moment_thumbnail_placeholder.png') ;
+	display: block;
+	height: 100%;
+	background-size: cover;
+}
+
+// Registered vs Guest
+.registered .guest{
+	display: none;
+}
+.guest .registered{
+	display: none;
+}
+
+// __partner_twitch_more_html_css
+.twitch .more{
+	color            : $color_teal;
+	background-color : $color_white;
+	transition		  : all 200ms;
+}
+.twitch .more:hover{
+	color            : $color_white;
+	background-color : $color_teal_light;
+}

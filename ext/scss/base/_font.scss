@@ -1,0 +1,46 @@
+// Font Family
+@font-face {
+	font-family: 'Syncopate';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Syncopate'), local('Syncopate-Regular'), url("http://fonts.gstatic.com/s/syncopate/v6/pDM9CVwNx1ufBHCEatJA3JBw1xU1rKptJj_0jans920.woff2") format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+	font-family: 'Syncopate';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Syncopate Bold'), local('Syncopate-Bold'), url("http://fonts.gstatic.com/s/syncopate/v6/S5z8ixiOoC4WJ1im6jAlYBampu5_7CjHW5spxoeN3Vs.woff2") format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+.syncopate {
+	font-family: 'Syncopate', sans-serif;
+}
+.syncopate.bold {
+	font-family: 'Syncopate Bold', sans-serif;
+}
+
+// Font Size
+.font-smallest	{font-size: $text_font_size_smallest_small;}
+.font-small		{font-size: $text_font_size_small_small;}
+.font-medium	{font-size: $text_font_size_medium_small;}
+.font-large		{font-size: $text_font_size_large_small;}
+
+@media (min-width: $breakpoint_mobile) {
+	.font-smallest	{font-size: $text_font_size_smallest_mobile;}
+	.font-small		{font-size: $text_font_size_small_mobile;}
+	.font-medium	{font-size: $text_font_size_medium_mobile;}
+	.font-large		{font-size: $text_font_size_large_mobile;}
+}
+@media (min-width: $breakpoint_tablet) {
+	.font-smallest	{font-size: $text_font_size_smallest_tablet;}
+	.font-small		{font-size: $text_font_size_small_tablet;}
+	.font-medium	{font-size: $text_font_size_medium_tablet;}
+	.font-large		{font-size: $text_font_size_large_tablet;}
+}
+@media (min-width: $breakpoint_full) {
+	.font-smallest	{font-size: $text_font_size_smallest_full;}
+	.font-small		{font-size: $text_font_size_small_full;}
+	.font-medium	{font-size: $text_font_size_medium_full;}
+	.font-large		{font-size: $text_font_size_large_full; }
+}
