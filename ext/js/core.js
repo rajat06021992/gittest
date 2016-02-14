@@ -388,7 +388,7 @@ if (typeof mMerch === 'undefined') mMerch = (function() {
 
 				// __mMerch_menu_show
 				$(menu_html).show();
-				if (parseInt(App.user.id) != parseInt($(html_parent).attr('data-publisher')))
+				if(parseInt(App.user.id)!=parseInt($(html_parent).attr('data-publisher')))
 					$('.menu_item_group .menu_item_delete').addClass('hidden');
 
 				// __mMerch_menu_position
@@ -1971,7 +1971,7 @@ if (typeof pMerch === 'undefined') pMerch = (function() {
 				});
 
 				// __pMerch_menu_open_onClick_event
-				$(playlist_html).find('.playlist_popup.bottom.right.menu,.ghost_menu.bottom.right').click(function(e) {
+				$(playlist_html).find('.playlist_popup.bottom.right.menu,.ghost_menu.bottom.right').hover(function(e) {
 					e.preventDefault();
 					e.stopPropagation();
 
@@ -2015,7 +2015,7 @@ if (typeof pMerch === 'undefined') pMerch = (function() {
 
 				// __pMerch_menu_location_html_css
 				$(menu_html).show();
-				if (parseInt(App.user.id) != parseInt($(html_parent).attr('data-publisher')))
+				if(parseInt(App.user.id)!=parseInt($(html_parent).attr('data-publisher')))
 					$('.menu_item_group .menu_item_delete').addClass('hidden');
 
 				$(menu_html).css('left', $(html_parent).offset().left + $(html_parent).width() - $('.menu_item_group').width());
@@ -2450,16 +2450,10 @@ if (typeof pEdit === 'undefined') pEdit = (function() {
 						else
 							pEdit.pEdit_visibility_set('private');
 
-						$('.switch.mode .switch-label').removeClass('sticky_stream');
 						if (response.mode == "autoadd")
 							pEdit.pEdit_autoadd_set('autoadd');
-						else if (response.mode == "handpick")
+						else
 							pEdit.pEdit_autoadd_set('handpick');
-						else {
-							pEdit.pEdit_autoadd_set('autoadd');
-							$('.switch.mode .switch-label').addClass('sticky_stream');
-							$('.switch.mode .switch-label').attr('data-sticky_stream', 'Sticky Stream');
-						}
 
 						// __pEdit_sequence_render
 						pEdit.pEdit_sequence_clearAll();
@@ -2528,7 +2522,6 @@ if (typeof pEdit === 'undefined') pEdit = (function() {
 
 			// __pEdit_autoadd_set
 			$(pEdit.pEdit_html_selector_get()).find('.mode .switch-input').change(function() {
-				$('.switch.mode .switch-label').removeClass('sticky_stream');
 				if (!this.checked)
 					pEdit.pEdit_autoadd_set('handpick');
 				else
@@ -2585,8 +2578,6 @@ if (typeof pEdit === 'undefined') pEdit = (function() {
 				mode: $(pEdit.pEdit_html_selector_get()).find('.mode .switch-input').is(':checked') ? 'autoadd' : 'handpick'
 					//playlist_type:1
 			};
-			if ($('.switch.mode .switch-label').hasClass('sticky_stream'))
-				state.mode = 'sticky_stream';
 			if ($(pEdit.pEdit_html_selector_get()).attr('data-playlist')) state.id = $(pEdit.pEdit_html_selector_get()).attr('data-playlist');
 			return state;
 		},
@@ -3084,7 +3075,7 @@ if (typeof pNext === 'undefined') pNext = (function() {
 				Instruct.instruct_refresh();
 
 				setTimeout(function() {
-					if (!$('.no-touch #invisible_layer,.p-container .header.wrapper,.p-container .instruction.wrapper,#transparent_layer').hasClass('hover')) {
+					if(!$('.no-touch #invisible_layer,.p-container .header.wrapper,.p-container .instruction.wrapper,#transparent_layer').hasClass('hover')){
 						$('.no-touch #invisible_layer,.p-container .header.wrapper,.p-container .instruction.wrapper,#transparent_layer').removeClass('hover').removeClass('visible');
 					}
 				}, 5000);
@@ -3277,9 +3268,9 @@ if (typeof Feed === 'undefined') Feed = (function() {
 				that.fRow_titleMatch_populate();
 
 				if (App.user.personalize.length > 0) {
-					Feed.personalize_checker = setInterval(function() {
-						if (App.user.personalize != Feed.personalize) {
-							Feed.personalize = App.user.personalize;
+					Feed.personalize_checker=setInterval(function(){
+						if(App.user.personalize!=Feed.personalize){
+							Feed.personalize=App.user.personalize;
 							var personalize = JSON.parse(App.user.personalize);
 							if (personalize.favorite_partner_channel) {
 								var channels = personalize.favorite_partner_channel.split(',');
@@ -3289,7 +3280,7 @@ if (typeof Feed === 'undefined') Feed = (function() {
 								}
 							}
 						}
-					}, 1000);
+					},1000);
 				}
 
 				$('.frame').addClass('hidden');
@@ -4044,7 +4035,7 @@ if (typeof User === 'undefined') User = (function() {
 		user_stat_get: function(callback) {
 			_private.user_stat_get(callback);
 		},
-		user_favorite_partner_channel_get: function() {
+		user_favorite_partner_channel_get: function(){
 			return _private.user_favorite_partner_channel_get();
 		}
 	};
@@ -5252,7 +5243,6 @@ if (typeof Twitch === 'undefined') Twitch = (function() {
 							//console.log(stream.preview.template.replace('{width}',320).replace('{height}',180));
 							//console.log(object);
 							object.preview = stream.preview.template.replace('{width}', 320).replace('{height}', 180);
-							object.title = stream.channel.status;
 							if (typeof callback === 'function')
 								callback(object);
 						}
@@ -5995,11 +5985,11 @@ const
 	MY_HISTORY_MORE_ITEMS = 25,
 	MY_MOMENT_INIT_ITEMS = 5,
 	MY_MOMENT_MORE_ITEMS = 25,
-	FEED_PLAYLIST_INIT_ITEMS = 15,
+	FEED_PLAYLIST_INIT_ITEMS = 50,
 	TWITCH_EMBEDDED_THUMB_SIZE_FACTOR = 0.80,
 	TWITCH_PROFILE_REMIXES_ITEM_COUNT_INIT = 25,
 	TWITCH_PROFILE_REMIXES_ITEM_COUNT_MORE = 25,
-	FEED_PARTNER_PLAYLIST_INIT_ITEMS = 15;
+	FEED_PARTNER_PLAYLIST_INIT_ITEMS = 100;
 if (typeof CONFIG === 'undefined') CONFIG = (function() {
 	var _private = {
 		config_obj_get: function(callback) {
@@ -7033,10 +7023,8 @@ if (typeof Utility === 'undefined') Utility = (function() {
 
 			return (h) + ":" + (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s);
 		},
-		ucfirst: function(string) {
-			return string.replace(/\w\S*/g, function(txt) {
-				return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-			});
+		ucfirst: function(string){
+    		return string.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 		}
 	};
 	return {
@@ -7079,7 +7067,7 @@ if (typeof Utility === 'undefined') Utility = (function() {
 		seconds_to_hmmss_convert: function(seconds) {
 			return _private.seconds_to_hmmss_convert(seconds);
 		},
-		ucfirst: function(string) {
+		ucfirst: function(string){
 			return _private.ucfirst(string);
 		}
 	};
@@ -7098,11 +7086,11 @@ if (typeof Display === 'undefined') Display = (function() {
 		disp_chain_rebind: function(selector) {
 			$(selector).unbind('hover');
 			$(selector).hover(function() {
-					$(selector).addClass('hover');
-				},
-				function() {
-					$(selector).removeClass('hover').removeClass('visible');
-				});
+				$(selector).addClass('hover');
+			},
+			function() {
+				$(selector).removeClass('hover').removeClass('visible');
+			});
 			$(selector).addClass('visible');
 		},
 		disp_chain_reset: function() {
